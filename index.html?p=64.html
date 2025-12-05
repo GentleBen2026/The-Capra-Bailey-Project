@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+		<meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+
+		<title>Working through the Sources &#8211; The Capra Bailey Project</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" type="application/rss+xml" title="The Capra Bailey Project &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="The Capra Bailey Project &raquo; Comments Feed" href="comments/feed/index.html" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/caprabaileyproject.oucreate.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='wp-includes/css/dist/block-library/style.min.css%3Fver=6.2.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='wp-includes/css/classic-themes.min.css%3Fver=6.2.2.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--accent: #1abc9c;--wp--preset--color--dark-gray: #444;--wp--preset--color--medium-gray: #666;--wp--preset--color--light-gray: #888;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('index.html%3Fp=64.html');--wp--preset--duotone--grayscale: url('index.html%3Fp=64.html');--wp--preset--duotone--purple-yellow: url('index.html%3Fp=64.html');--wp--preset--duotone--blue-red: url('index.html%3Fp=64.html');--wp--preset--duotone--midnight: url('index.html%3Fp=64.html');--wp--preset--duotone--magenta-yellow: url('index.html%3Fp=64.html');--wp--preset--duotone--purple-green: url('index.html%3Fp=64.html');--wp--preset--duotone--blue-orange: url('index.html%3Fp=64.html');--wp--preset--font-size--small: 16px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--regular: 19px;--wp--preset--font-size--larger: 32px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='hemingway_googleFonts-css' href='wp-content/themes/hemingway/assets/css/fonts.css' type='text/css' media='all' />
+<link rel='stylesheet' id='hemingway_style-css' href='wp-content/themes/hemingway/style.css%3Fver=2.3.2.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.min.js%3Fver=3.6.4' id='jquery-core-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min.js%3Fver=3.4.0' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="wp-json/index.html" /><link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/64" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.2.2" />
+<link rel="canonical" href="index.html%3Fp=64.html" />
+<link rel='shortlink' href='index.html%3Fp=64.html' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fcaprabaileyproject.oucreate.com%252Fworking-through-the-sources%252F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fcaprabaileyproject.oucreate.com%252Fworking-through-the-sources%252F&amp;format=xml" />
+		<style type="text/css" id="wp-custom-css">
+			.pages-list {
+    list-style: none;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+}
+.pages-list li {
+    margin: 0 5px;
+    margin-top: 30px;
+}
+.pages-list li .page-title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.pages-list li .caption {
+    display: block;
+    font-size: .9em;
+    font-style: italic;
+}
+.wp-caption img {
+    margin: 0 auto;
+}
+.post-content cite {
+	text-transform: none;
+}
+.wp-container-1.wp-container-1.img-quote-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 0 20px 0;
+}
+.img-quote-wrapper blockquote {
+    flex-basis: min-content;
+    flex-grow: 1;
+}
+.img-quote-wrapper .wp-caption, .img-quote-wrapper .wp-block-image {
+    flex-basis: content;
+    margin: 15px 0 0 0;
+}
+@media (max-width: 800px) {
+    .img-quote-wrapper blockquote {
+        flex-basis: auto;
+    }
+}
+blockquote.clear {
+    clear: both;
+}
+main a {
+	text-decoration: underline;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	padding-bottom: 1px;
+	border-radius: 4px;
+	color: #003399;
+}
+main a:hover, main a:focus {
+	outline-offset: 1px;
+	background-color: #ffe47a;
+	border-color: #888;
+}
+main a:focus {
+	outline: 2px solid #333;
+}
+.pages-list a {
+	display: block;
+	border: 2px dashed transparent;
+	padding: 2px;
+}
+.pages-list a:hover, .pages-list a:focus {
+	background-color: transparent;
+	border-color: #003399;
+	outline: none;
+}
+.pages-list a:hover span, .pages-list a:focus span {
+	background-color: #ffe47a;
+}
+.search-form .search-submit {
+	background-color: #12826c;
+	font-size: 16px;
+	text-transform: none;
+	border: 1px solid #fff;
+}
+input[type="submit"]:hover, input[type="submit"]:focus {
+	color: #000;
+	background-color: #1abc9c;
+}
+.credits a {
+	text-decoration: underline;
+	padding: 1px;
+}
+.credits a:hover, .credits a:focus {
+	background-color: #ffe47a;
+	color: #003399;
+}
+.wp-block-image figure {
+	text-align: center;
+}
+.wp-block-image.small figure {
+	width: 350px;
+}
+.next-link {
+	clear: both;
+}
+.next-link a {
+	display: inline-flex;
+	padding: 2px 5px;
+}
+.next-link span {
+	font-weight: bold;
+	padding-left: 10px;
+}		</style>
+		
+	</head>
+	
+	<body data-rsssl=1 class="page-template page-template-template-fullwidth page-template-template-fullwidth-php page page-id-64 template-fullwidth">
+
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+		<a class="skip-link button" href="index.html%3Fp=64.html#site-content">Skip to the content</a>
+	
+		<div class="big-wrapper">
+	
+			<div class="header-cover section bg-dark-light no-padding">
+
+						
+				<div class="header section" style="background-image: url( wp-content/uploads/2017/04/headertest.jpg );">
+							
+					<div class="header-inner section-inner">
+					
+											
+							<div class="blog-info">
+							
+																	<div class="blog-title">
+										<a href="index.html" rel="home">The Capra Bailey Project</a>
+									</div>
+																
+																	<p class="blog-description">&quot;I wish I had a million dollars&quot;</p>
+															
+							</div><!-- .blog-info -->
+							
+															
+					</div><!-- .header-inner -->
+								
+				</div><!-- .header -->
+			
+			</div><!-- .bg-dark -->
+			
+			<div class="navigation section no-padding bg-dark">
+			
+				<div class="navigation-inner section-inner group">
+				
+					<div class="toggle-container section-inner hidden">
+			
+						<button type="button" class="nav-toggle toggle">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<span class="screen-reader-text">Toggle mobile menu</span>
+						</button>
+						
+						<button type="button" class="search-toggle toggle">
+							<div class="metal"></div>
+							<div class="glass"></div>
+							<div class="handle"></div>
+							<span class="screen-reader-text">Toggle search field</span>
+						</button>
+											
+					</div><!-- .toggle-container -->
+					
+					<div class="blog-search hidden">
+						<form role="search" method="get" class="search-form" action="index.html">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>					</div><!-- .blog-search -->
+				
+					<ul class="blog-menu">
+						<li id="menu-item-989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-989"><a href="index.html">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-1170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1170"><a href="index.html%3Fp=62.html">Why This Story Matters</a></li>
+	<li id="menu-item-1163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1163"><a href="index.html%3Fp=60.html">What It Took to Own a Home</a></li>
+	<li id="menu-item-1147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1147"><a href="index.html%3Fp=54.html">The Politics of Recovery</a></li>
+	<li id="menu-item-1138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1138"><a href="index.html%3Fp=52.html">It’s a Wonderful Life and the Great Recession</a></li>
+	<li id="menu-item-1151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1151"><a href="index.html%3Fp=57.html">The Power of the Past over the Present</a></li>
+	<li id="menu-item-1180" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-64 current_page_item menu-item-1180"><a href="index.html%3Fp=64.html" aria-current="page">Working through the Sources</a></li>
+	<li id="menu-item-1004" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1004"><a href="index.html%3Fp=755.html">Works Cited</a></li>
+	<li id="menu-item-1122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1122"><a href="index.html%3Fp=432.html">Dedication</a></li>
+	<li id="menu-item-1141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1141"><a href="index.html%3Fp=579.html">Thanks and Contact</a></li>
+</ul>
+</li>
+<li id="menu-item-1005" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1005"><a href="index.html%3Fp=869.html">In the Classroom</a>
+<ul class="sub-menu">
+	<li id="menu-item-1002" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1002"><a href="index.html%3Fp=883.html">What is Democratic Capitalism?</a></li>
+	<li id="menu-item-1001" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1001"><a href="index.html%3Fp=887.html">What did it take to own a home in George Bailey’s America (1907-1941)?</a></li>
+	<li id="menu-item-992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-992"><a href="index.html%3Fp=974.html">Who Saved Bedford Falls?</a></li>
+	<li id="menu-item-993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-993"><a href="index.html%3Fp=970.html">Why Not Housing for All?</a></li>
+	<li id="menu-item-991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-991"><a href="index.html%3Fp=976.html">What Happens when Hard Times Return?</a></li>
+</ul>
+</li>
+<li id="menu-item-468" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-468"><a href="index.html%3Fp=466.html">Timeline</a></li>
+<li id="menu-item-855" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-855"><a href="index.html%3Fp=852.html">Glossary</a></li>
+<li id="menu-item-801" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-801"><a href="index.html%3Fp=1.html">Your Comments</a></li>
+					 </ul><!-- .blog-menu -->
+					 
+					 <ul class="mobile-menu">
+					
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-989"><a href="index.html">About</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1170"><a href="index.html%3Fp=62.html">Why This Story Matters</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1163"><a href="index.html%3Fp=60.html">What It Took to Own a Home</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1147"><a href="index.html%3Fp=54.html">The Politics of Recovery</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1138"><a href="index.html%3Fp=52.html">It’s a Wonderful Life and the Great Recession</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1151"><a href="index.html%3Fp=57.html">The Power of the Past over the Present</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-64 current_page_item menu-item-1180"><a href="index.html%3Fp=64.html" aria-current="page">Working through the Sources</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1004"><a href="index.html%3Fp=755.html">Works Cited</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1122"><a href="index.html%3Fp=432.html">Dedication</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1141"><a href="index.html%3Fp=579.html">Thanks and Contact</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1005"><a href="index.html%3Fp=869.html">In the Classroom</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1002"><a href="index.html%3Fp=883.html">What is Democratic Capitalism?</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1001"><a href="index.html%3Fp=887.html">What did it take to own a home in George Bailey’s America (1907-1941)?</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-992"><a href="index.html%3Fp=974.html">Who Saved Bedford Falls?</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-993"><a href="index.html%3Fp=970.html">Why Not Housing for All?</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-991"><a href="index.html%3Fp=976.html">What Happens when Hard Times Return?</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-468"><a href="index.html%3Fp=466.html">Timeline</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-855"><a href="index.html%3Fp=852.html">Glossary</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-801"><a href="index.html%3Fp=1.html">Your Comments</a></li>
+						
+					 </ul><!-- .mobile-menu -->
+				 
+				</div><!-- .navigation-inner -->
+				
+			</div><!-- .navigation -->
+<main class="wrapper section-inner group" id="site-content">
+
+	<div class="content left">
+
+		<div class="posts">
+												        
+			<article id="post-64" class="post-64 page type-page status-publish hentry">
+
+	<div class="post-header">
+
+		
+					
+				<h1 class="post-title entry-title">
+											Working through the Sources									</h1>
+
+						
+	</div><!-- .post-header -->
+																					
+	<div class="post-content entry-content">
+	
+		
+<h2 class="wp-block-heading"><strong>The Cultural Politics of New Deal America</strong></h2>
+
+
+
+<p>Even though immigration into the United States slowed dramatically between the two world wars, the nation’s culture was changed in those years by the millions who had come in the decades before. As those immigrants continued to toil, they formed families and contributed a second generation which, though native born, also knew themselves (often quite proudly) to be the children of immigrants and contributors to the vitality of a “nation of immigrants.” Roosevelt addressed these Americans regularly throughout his presidency, and by voting for the Democratic Party, the next generation repaid, honored, and confirmed his recognition of them as special representatives of what made the United States exceptional among the world’s democratic nations. Richard Weiss’s “Ethnicity and Reform: Minorities and the Ambience of the Depression Years” (<em>Journal of American History</em>&nbsp;66 1 (979), no. 3, 566–85) opened a new door for me into the Depression years. Diana Selig delineated how this development shaped public education in&nbsp;<em>Americans All: The Cultural Gifts Movement</em>&nbsp;(2008).</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Looking Outward from Bedford Falls, 1929–1945</strong></h3>
+
+
+
+<p>Looking beyond the role of Bailey Building and Loan in the community of Bedford Falls, we see that&nbsp;<em>It’s a Wonderful Life</em>&nbsp;also pays tribute to a benevolent internationalism that is animated by the desire to bring modernization and progress to those parts of the world believed to be in need of it. The last eighty years have forced Americans to confront but not resolve the many unexamined assumptions embedded in this faith. Over the years, I have tried to summon George Bailey to mind in the image of public figures who both possessed Bailey family values but were also able to live the life of adventure that George Bailey could only dream about.</p>
+
+
+
+<p>I have found Susan Schulten’s&nbsp;<em>The Geographic Imagination in America, 1880–1950</em>&nbsp;(2001) especially helpful. In her rigorous examination of the assumptions that lay behind the view of the world espoused by&nbsp;<em>National Geographic</em>&nbsp;(and its longtime editor Gilbert Grosvenor) over much of its history. Schulten identifies Bailey as an “archetypal . . . all-American reader: that is, a white Christian small town boy imbued with the spirit of adventure capitalism,”<em>&nbsp;</em>powered by a “veneration of efficiency and productivity,” and inclined to seeing the vast area beyond the United States (and Europe) as “a world of political children” eager for western tutelage (Schulten 2, 46, 53).</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-medium"><img decoding="async" width="205" height="300" src="wp-content/uploads/2017/04/51tH20xw1qL._SY344_BO12c2042c2032c200_-205x300.jpg" alt="May 1919 National Geographic Magazine cover" class="wp-image-469" srcset="wp-content/uploads/2017/04/51tH20xw1qL._SY344_BO12c2042c2032c200_-205x300.jpg 205w, wp-content/uploads/2017/04/51tH20xw1qL._SY344_BO12c2042c2032c200_.jpg 236w" sizes="(max-width: 205px) 100vw, 205px" /></figure></div>
+
+
+<p>Would George Bailey, the bridge building engineer, be so filled with this cultural baggage when he worked abroad that he would be confidently oblivious to much of what he would need to understand about the new people and ideas he now encountered? Or would he be one of the readers of&nbsp;<em>National Geographic</em>&nbsp;discovered by Stephanie L. Hawkins? In&nbsp;<em>American Iconographic: National Geographic, Global Culture, and the Visual Imagination</em>&nbsp;(2010), Hawkins finds that some readers talked back to&nbsp;<em>National Geographic</em>&nbsp;when they found it too quiet on the subject of fascism and complicit in a cultural imperialism that found quick and easy utility in the idea of “racial geography.” If by “internationalism” we mean an effort to reach out to others and to be changed, guided, and taught by their wisdom, their example, and their sense of priorities and values, then Hawkins finds that “individual readers frequently expressed greater internationalist sympathies than did the magazine itself” (Hawkins 132).</p>
+
+
+
+<h4 class="wp-block-heading"><strong>Is That George Bailey?</strong></h4>
+
+
+
+<p>At times, I felt George Bailey lurking in the pages of my research into the building and loan movement, even if his presence seemed to be something only I was looking for. &nbsp;Consider these words from Josephine Hedges Ewalt’s history of the savings and loan industry (see the Works Cited section). &nbsp;When she writes of the men who led the industry through two world wars and the Great Depression, Ewalt draws us the following picture of leaders who led their institutions during and immediately after the Great Depression: “The men who tackled the recovery job were generally between 45 and 55 years old. &nbsp;In the main, they were those who had seen their associations through their times of trial” (Ewalt 131-132).</p>
+
+
+
+<h4 class="wp-block-heading"><strong>A Herbert Hoover-George Bailey connection</strong></h4>
+
+
+
+<p>When we imagine George Bailey in flesh and blood, we must not forget a very important but sometimes overlooked figure: Herbert Hoover, the man who preceded Franklin Roosevelt as president.</p>
+
+
+<div class="wp-block-image">
+<figure class="alignright size-medium"><img decoding="async" loading="lazy" width="223" height="300" src="wp-content/uploads/2017/04/Herbert-Hoover-cowboy-223x300.jpg" alt="" class="wp-image-472" srcset="wp-content/uploads/2017/04/Herbert-Hoover-cowboy-223x300.jpg 223w, wp-content/uploads/2017/04/Herbert-Hoover-cowboy.jpg 385w" sizes="(max-width: 223px) 100vw, 223px" /><figcaption class="wp-element-caption">Herbert Hoover, 1898. Credit: State Library of Western Australia</figcaption></figure></div>
+
+
+<p>Hoover was blamed by many Americans for what seemed to be an anemic response to the Great Depression. &nbsp;Like Roosevelt, Hoover had deep reservations about the consequences of giving federal funds directly to individuals in need, fearing it would undermine their self-reliance (this did not ultimately keep him from providing such aid, as it did for Hoover). &nbsp;When Hoover was first elected the nation’s chief executive in 1928, he was seen as a “can do” businessman, a humanitarian and a gifted organizer of private people and private resources; and indeed his long career as world renowned engineer confirms this public reputation. The Hoover of 1928 seemed to represent much that was “progressive”. &nbsp;He believed, for instance, in the power of private cooperation to meet human needs on the scale required by modern industrial society. &nbsp;And, in times of general prosperity, this was not empty promise.</p>
+
+
+
+<p>As we bring &nbsp;George Bailey &nbsp;and Herbert Hoover together in sharper focus, let us remember that George Bailey yearned for the kind of achievements as a planner and a builder that Hoover, the engineer had actually brought into being. &nbsp;Let us add to this, the following words from Hoover about what engineers could contribute to human progress:</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p>There was a time when the law was looked upon as the greatest profession and the one great avenue to public life and public service. I think that was rightly the case, because there was a period in the world’s history when the development of law was fundamentally the development of liberty. But with the completion of the safeguards of liberty and the turn of the world towards the problems of comfort, engineering has become, or should have become, the dominant profession. The engineer is indeed the most critical member of our national brain today. He should have the same devotion to public service that the legal profession has given to our country these many years</p>
+<cite>Hoover, 35</cite></blockquote>
+
+
+
+<p>Does this sound like George Bailey to you? &nbsp;It does to me.</p>
+
+
+
+<h4 class="wp-block-heading"><strong>George Bailey and Wendell Willkie</strong></h4>
+
+
+
+<p>Wendell Willkie, who gave FDR a real contest in the election of 1940, provides another instance in history where the values of George Bailey might have been brought to life. &nbsp;As we think about what changes of mind, heart, and outlook might have occurred among Americans in the 1940s, Wendell Willkie’s account of his wartime travels for President Roosevelt are instructive. Willkie’s book is best remembered for its naiveté about “Uncle Joe” Stalin and for a tendency to see American style aspirations in the face of every new friend he meets. However, this shorthand rendering of Willkie’s best-selling&nbsp;<em>One World</em>&nbsp;(1943) leaves out much that would be useful for the world-weary Americans of today to remember. Consider, for instance, these wise and prescient words as Willkie traveled what cold warriors would soon be calling the “underdeveloped” or “developing” world (quotes from the 1943 Pocket Book paperback edition):</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p>I found no automatic guarantee that these changes will be in our favor. The magic of our Western political ideas have been sharply challenged in the minds of many Moslems, many Arabs, many Jews, many Iranians. They have watched us now at close range, for almost a generation . . . Everywhere I found polite but skeptical people, who met my questions about their problems and difficulties with polite but ironic questions about our own. The maladjustments of race in America came up frequently.</p>
+<cite>Wilkie, 18-19</cite></blockquote>
+
+
+
+<p>Or these similarly cautionary observations:</p>
+
+
+
+<div class="wp-block-group img-quote-wrapper is-nowrap is-layout-flex wp-container-1">
+<figure class="wp-block-image size-full is-resized"><img decoding="async" loading="lazy" src="wp-content/uploads/2017/04/wilkie.jpg" alt="Book cover of One World by Wendell L. Willkie" class="wp-image-304" width="150" height="150" srcset="wp-content/uploads/2017/04/wilkie.jpg 300w, wp-content/uploads/2017/04/wilkie-150x150.jpg 150w" sizes="(max-width: 150px) 100vw, 150px" /></figure>
+
+
+
+<blockquote class="wp-block-quote">
+<p>Most of the people of Asia have never known democracy. They may or may not want our type of democracy, obviously all of them are not ready to have democracy handed to them next Tuesday on a silver platter. But they are determined to work out their own destiny under governments selected by themselves.</p>
+<cite>Wilkie, 182</cite></blockquote>
+</div>
+
+
+
+<p>When I imagine George Bailey, the leading symbol of democratic capitalism in Bedford Falls, I have faith that he might find the courage to say some things that Capra and others felt best to leave unsaid, lest things become too political and obstruct the creation of audience solidarity in the name of box office success in 1946. Here again, I find words from Wendell Willkie’s&nbsp;<em>One World</em>&nbsp;both instructive and inspirational:</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p>We are learning that the test of a people is their aim not their color. . . .We must now and hereafter, together with those people, reject the doctrine of imperialism which condemns the world to endless war. . . . It is becoming increasingly apparent to thoughtful Americans that we cannot fight the forces and ideas of imperialism abroad and maintain any form of imperialism at home</p>
+<cite>Wilkie, 188-190</cite></blockquote>
+
+
+
+<h4 class="wp-block-heading"><strong>FDR and George Bailey</strong></h4>
+
+
+
+<p>Finally, we come to the electoral champion of his time, Franklin Delano Roosevelt. As a patrician who received from his family estate his entire life, as a member of the landed gentry of New York’s Hudson River Valley, Roosevelt would at first seem to have little in common with George Bailey—other than a welcoming social philosophy that, even with its sad limitations, caused millions of Americans to think of him as a friend. And yes, the FDR Presidential Library can confirm that the president was a longtime member of the National Geographic Society, probably through two world wars.</p>
+
+
+
+<p>I do not mean to argue that any of these individuals is a model for George Bailey. George Bailey was played by James Stewart under the direction of Frank Capra from a script which emerged from many drafts by many authors over several years. The result of all this labor was the creation of a story that, as time has moved away from the divisive particulars of Roosevelt-era politics, has been rendered a curiously ahistorical narrative with only the slightest and simplest suggestions of actual political and social disagreement. Thus,&nbsp;<em>It’s a Wonderful Life</em>&nbsp;is seen to catch the essence of certain patterns of culture: Roosevelt, Willkie, and Hoover inhabited this world with Frank Capra and found success in it not only because of their achievements, but also because they convinced millions of people that they were acting as real flesh and blood representations or participant symbols of our best selves and our best aspirations as Americans.</p>
+
+
+
+<h2 class="wp-block-heading"><strong>Further Reading</strong></h2>
+
+
+
+<h3 class="wp-block-heading"><strong>What It Took to Own a Home</strong></h3>
+
+
+
+<p>On the policies that framed and constrained homeownership before and after the New Deal, Andrew Wiese’s&nbsp;<em>Places of Their Own: African-American Suburbanization in the Twentieth Century</em>&nbsp;(2004) answered many questions and provided essential historical context and analysis. For an understanding of the persistent strength of racism in the housing and mortgage industries into the present I am indebted to several studies, including Joe R. Feagan and Melvin P. Sykes,&nbsp;<em>Living with Racism: The Black Middle Class Experience</em>&nbsp;(1994); Gary Orfield and Carole Ashinaze,&nbsp;<em>Closing the Door: Conservative Public Policy and Black Opportunity</em>&nbsp;(1991); and Dorothy K. Newman et al.,&nbsp;<em>Protest, Politics and Prosperity: Black Americans and White Institutions, 1940–1975</em>&nbsp;(1978). Eric John Abrahamson’s&nbsp;<em>Building Home: Howard F. Ahmanson and the Politics of the American Dream</em>&nbsp;(2013) is essential to this discussion for two reasons: first, he demonstrates how federal policies encouraged builders to practice deficit spending in the Keynesian model; second, this unflinching study provides a very clear sense of how respectable lenders, who are also respected philanthropists, very effectively catered to public sentiment in southern California favoring racial exclusion without facing a penalty in law or elsewhere. Ruby Mendenhall brings this sadly continuing story up to the present in “The Political Economy of Black Housing: From the Housing Crisis of the Great Migrations to the Subprime Mortgage Crisis,” in&nbsp;<em>The Black Scholar</em>, 40 (1), 20–37.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>Politics and Policy in Depression and Recovery, 1929-1945</strong></h3>
+
+
+
+<p>David M. Kennedy’s&nbsp;<em>Freedom from Fear: The American People in Depression and War</em>&nbsp;(2001) provides the best one-volume narrative resource on the years covered in&nbsp;<em>It’s a Wonderful Life</em>; William L. Leuchtenburg’s&nbsp;<em>Franklin Roosevelt and the New Deal</em>&nbsp;(1963, 2009), a survey that is grounded in prodigious archival research, provides another essential and sophisticated introduction to the period between 1932 and 1940. For those wishing to understand how the New Deal and its supporters and beneficiaries in the workforce brought changes in daily life, politics, and work, see Lizabeth Cohen’s meticulous and imaginative Chicago-centered study,&nbsp;<em>Making a New Deal</em>&nbsp;(1991). Holly Allen’s&nbsp;<em>Forgotten Men and Fallen Women: The Cultural Politics of New Deal Narratives</em>&nbsp;(2015) is a very provocative and original new study that will add a welcome new dimension of challenge and understanding to appreciating the world of George and Mary Bailey.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>The Great Recession</strong></h3>
+
+
+
+<p>The financial crisis that precipitated and deepened the Great Recession has roots going back more than thirty years to a trend toward deregulation that had both Democratic and Republican advocates, and for which administrations and congressional majorities of both parties must take responsibility. While not misguided in all of its results, these policy makers must share the blame for what Alan Greenspan—speaking in another but not completely unrelated context—called “irrational exuberance” in their pursuit of this type of change. On the early years of the step away from New Deal–era regulations, William Greider’s history of the federal reserve system,&nbsp;<em>Secrets of the Temple</em>&nbsp;(1987) remains a good place to start, joined in 2004 by David L. Mason’s&nbsp;<em>From Buildings and Loans to Bail-Outs: A History of the American Savings and Loan Industry, 1831–1995</em>&nbsp;(2004), along with Robert Sheer’s&nbsp;<em>The Great American Stick-Up</em>&nbsp;(2010), James R. Barth’s&nbsp;<em>The Great Savings and Loan Debacle</em>&nbsp;(1991), and M. Manfred Fabritius and William Borges,&nbsp;<em>Saving the Savings and Loan: The U.S. Thrift Industry and the Texas Experienc</em>e (1989). That not everybody forgot the lessons of the earlier period is demonstrated nicely by Robert D. Auerbach in his book, D<em>eception and Abuse at the Fed: Henry B. Gonzales Battles Alan Greenspan’s Bank</em>&nbsp;(2008).</p>
+
+
+<div class="wp-block-image">
+<figure class="alignleft"><img decoding="async" loading="lazy" width="300" height="187" src="wp-content/uploads/2017/04/ReaganStockmanDebatePrep.jpg" alt="" class="wp-image-512"/><figcaption class="wp-element-caption">David Stockman (standing in for Walter Mondale) and Ronald Reagan at rehearsal debate, 1984</figcaption></figure></div>
+
+
+<p>Although deregulation began in the years before the Reagan administration came to power in 1981 (see Thomas K. McCraw’s <em>Prophets of Regulation</em>, 1984) it gained powerful momentum with that event. William Greider is a first-person witness to what that administration had in mind: see especially Greider’s interview with David Stockman about the assumptions behind Reaganomics and deregulation generally, first published in <em>The Atlantic</em> at the end of 1981. That very controversial conversation was republished in <em>The Education of David Stockman and Other Americans</em> (1982), which should be read beside Stockman’s own memoir of his service as President Reagan’s budget director, <em>The Triumph of Politics</em> (1986). Stockman’s indictment of the Bush and Obama responses to the crisis is included in his lengthy indictment of the political economy of the New Deal, <em>The Great Deformation: the Corruption of Capitalism in America</em> (2013).</p>
+
+
+
+<div class="next-link"><a href="index.html%3Fp=755.html"><img decoding="async" loading="lazy" class="wp-image-644 alignnone" src="wp-content/uploads/2017/06/arrow-e1497386365312.png" alt="Next page" width="26" height="24"><span>Works Cited</span></a></div>
+							
+	</div><!-- .post-content -->
+				
+	
+</article><!-- .post -->			
+		</div><!-- .posts -->
+	
+	</div><!-- .content -->
+
+			
+</main><!-- .wrapper -->
+		
+	<div class="footer section large-padding bg-dark">
+		
+		<div class="footer-inner section-inner group">
+		
+						
+				<div class="column column-1 left">
+				
+					<div class="widgets">
+			
+						<div id="search-2" class="widget widget_search"><div class="widget-content"><form role="search" method="get" class="search-form" action="index.html">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></div></div>											
+					</div>
+					
+				</div>
+				
+			<!-- .footer-a -->
+				
+			<!-- .footer-b -->
+								
+			<!-- .footer-c -->
+					
+		</div><!-- .footer-inner -->
+	
+	</div><!-- .footer -->
+	
+	<div class="credits section bg-dark no-padding">
+	
+		<div class="credits-inner section-inner group">
+	
+			<p class="credits-left">
+				&copy; 2025 <a href="index.html">The Capra Bailey Project</a>
+			</p>
+			
+			<p class="credits-right">
+				<span>Theme by <a href="https://andersnoren.se">Anders Noren</a></span> &mdash; <a title="To the top" class="tothetop">Up &uarr;</a>
+			</p>
+					
+		</div><!-- .credits-inner -->
+		
+	</div><!-- .credits -->
+
+</div><!-- .big-wrapper -->
+
+<style id='core-block-supports-inline-css' type='text/css'>
+.wp-container-1.wp-container-1{flex-wrap:nowrap;}
+</style>
+<script type='text/javascript' src='wp-content/plugins/hypothesis/js/nohighlights.js%3Fver=0.7.4' id='nohighlights-js'></script>
+<script type='text/javascript' src='wp-content/plugins/hypothesis/js/showhighlights.js%3Fver=0.7.4' id='showhighlights-js'></script>
+<script type='text/javascript' src='wp-content/themes/hemingway/assets/js/global.js%3Fver=2.3.2' id='hemingway_global-js'></script>
+<script type='text/javascript' src='wp-includes/js/comment-reply.min.js%3Fver=6.2.2' id='comment-reply-js'></script>
+
+</body>
+</html>
